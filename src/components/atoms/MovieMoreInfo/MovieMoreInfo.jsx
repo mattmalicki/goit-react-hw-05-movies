@@ -1,17 +1,19 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+import styles from './MovieMoreInfo.module.css';
 
 export const MovieMoreInfo = () => {
   return (
-    <>
-      <p>Additional info:</p>
-      <ul>
-        <li>
-          <Link to={`cast`}>Cast</Link>
+    <div className={styles.More}>
+      <p className={styles.Title}>Additional info:</p>
+      <ul className={styles.List}>
+        <li className={styles.Item}>
+          <NavLink to={`cast`}>Cast</NavLink>
         </li>
-        <li>
-          <Link to={`reviews`}>Reviews</Link>
+        <li className={styles.Item}>
+          <NavLink to={`reviews`}>Reviews</NavLink>
         </li>
       </ul>
-    </>
+    </div>
   );
 };

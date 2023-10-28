@@ -34,4 +34,13 @@ button {
 a,
 input {
   outline: none;
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+a.active {
+  color: orange;
+  border: 1px solid orange;
+  border-radius: 5px;
 }
