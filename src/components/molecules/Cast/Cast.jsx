@@ -20,7 +20,7 @@ export const Cast = () => {
   return (
     <ul>
       {cast.map(actor => (
-        <CastMember key={cast.id} actor={actor} />
+        <CastMember key={actor.id} actor={actor} />
       ))}
     </ul>
   );
