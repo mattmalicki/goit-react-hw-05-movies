@@ -1,17 +1,19 @@
+import styles from './CastMember.module.css';
+
 export const CastMember = ({ actor }) => {
   return (
-    <li>
-      <div>
+    <li className={styles.Item}>
+      <div className={styles.Image}>
         <img
           src={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
           width="100%"
-          alt="Cast member of a movie"
+          alt={`${actor.name}`}
         />
-        <span>{actor.name}</span>
       </div>
-      <div>
-        <span>Character:</span>
-        <span>{actor.character}</span>
+      <div className={styles.CharacterDiv}>
+        <span className={styles.Name}>{actor.name}</span>
+        <span className={styles.CharacterTitle}>as</span>
+        <span className={styles.Character}>{actor.character}</span>
       </div>
     </li>
   );

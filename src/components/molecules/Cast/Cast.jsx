@@ -5,6 +5,8 @@ import { CastMember } from 'components/atoms/CastMember/CastMember';
 
 import { fetchDetailsMovie } from 'services/fetchFromApi';
 
+import styles from './Cast.module.css';
+
 export const Cast = () => {
   const { id } = useParams();
   const [cast, setCast] = useState([]);
@@ -18,7 +20,7 @@ export const Cast = () => {
   }, [id]);
 
   return (
-    <ul>
+    <ul className={styles.CastList}>
       {cast.map(actor => (
         <CastMember key={actor.id} actor={actor} />
       ))}
