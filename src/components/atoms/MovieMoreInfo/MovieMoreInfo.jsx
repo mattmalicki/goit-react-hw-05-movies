@@ -6,10 +6,10 @@ export const MovieMoreInfo = ({ id }) => {
       <p>Additional info:</p>
       <ul>
         <li>
-          <Link to={`${id}/cast`} />
+          <Link to={`${id}/cast`}>Cast</Link>
         </li>
         <li>
-          <Link to={`${id}/reviews`} />
+          <Link to={`${id}/reviews`}>Review</Link>
         </li>
       </ul>
     </>

@@ -2,7 +2,11 @@ export const MovieData = ({ movie }) => {
   return (
     <div>
       <div>
-        <img src={movie.poster} width="100%" alt="Poster of a movie" />
+        <img
+          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          width="100%"
+          alt={movie.title}
+        />
       </div>
       <div>
         <h2>{movie.title}</h2>
@@ -13,7 +17,7 @@ export const MovieData = ({ movie }) => {
         </div>
         <div>
           <p>Genres</p>
-          <span>{movie.genres}</span>
+          <span>{movie.vote_average}</span>
         </div>
       </div>
     </div>
