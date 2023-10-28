@@ -1,6 +1,6 @@
-export const SearchForm = () => {
+export const SearchForm = ({ onSubmit }) => {
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input
         name="querry"
         type="text"
