@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import { Review } from 'components/atoms/Review/Review';
+import { NoReviews } from 'components/atoms/NoReviews/NoReviews';
 
 import { fetchDetailsMovie } from 'services/fetchFromApi';
 
@@ -32,7 +33,9 @@ export const Reviews = () => {
           />
         ))
       ) : (
-        <span>No reviews found</span>
+        <li>
+          <NoReviews />
+        </li>
       )}
     </ul>
   );
