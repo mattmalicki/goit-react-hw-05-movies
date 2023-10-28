@@ -9,8 +9,9 @@ import { MovieInfo } from 'components/organisms/MovieInfo/MovieInfo';
 export const App = () => {
   return (
     <>
+      <Header />
+
       <Routes>
-        <Header />
         <Route path="/" element={<Trending />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieInfo />} />
