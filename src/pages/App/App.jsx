@@ -4,7 +4,7 @@ import { Movies } from 'pages/Movies/Movies';
 import { Header } from 'components/organisms/Header/Header';
 import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 import { Trending } from 'pages/Trending/Trending';
-import { MovieInfo } from 'components/organisms/MovieCard/MovieInfo';
+import { MovieInfo } from 'components/organisms/MovieInfo/MovieInfo';
 
 export const App = () => {
   return (

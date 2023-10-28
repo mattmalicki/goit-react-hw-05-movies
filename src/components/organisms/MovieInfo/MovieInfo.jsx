@@ -5,7 +5,7 @@ import { Reviews } from 'components/molecules/Reviews/Reviews';
 import { MovieData } from 'components/molecules/MovieData/MovieData';
 import { MovieMoreInfo } from 'components/atoms/MovieMoreInfo/MovieMoreInfo';
 
-export const MovieCard = () => {
+export const MovieInfo = () => {
   return (
     <>
       <MovieData />

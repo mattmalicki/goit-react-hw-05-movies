@@ -1,4 +1,4 @@
-import { MovieCard } from 'components/organisms/MovieInfo/MovieInfo';
+import { MovieCard } from 'components/atoms/MovieCard/MovieCard';
 
 export const MovieList = ({ movies }) => {
   return (

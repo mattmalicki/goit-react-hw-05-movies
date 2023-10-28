@@ -2,7 +2,7 @@ export const MovieData = ({ movie }) => {
   return (
     <div>
       <div>
-        <img src={movie.poster} />
+        <img src={movie.poster} width="100%" alt="Poster of a movie" />
       </div>
       <div>
         <h2>{movie.title}</h2>

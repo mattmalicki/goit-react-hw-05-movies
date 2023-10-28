@@ -2,7 +2,7 @@ export const CastMember = ({ cast }) => {
   return (
     <li>
       <div>
-        <img src={cast.src} width="100%" />
+        <img src={cast.src} width="100%" alt="Cast member of a movie" />
         <span>{cast.actor}</span>
       </div>
       <div>
