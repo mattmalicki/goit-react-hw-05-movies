@@ -52,9 +52,9 @@ export async function fetchMoviesWithName(query, page, ...rest) {
   }
 }
 
-export async function fetchDetailsMovie(id) {
+export async function fetchDetailsMovie(id, additionalPath = '') {
   try {
-    const requestPath = `movie/${id}`;
+    const requestPath = `movie/${id}${additionalPath}`;
     const movie = await fetchFromApi({ requestPath });
     return movie;
   } catch (err) {

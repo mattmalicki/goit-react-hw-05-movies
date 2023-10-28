@@ -1,10 +1,26 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+
 import { CastMember } from 'components/atoms/CastMember/CastMember';
 
-export const Cast = ({ cast }) => {
+import { fetchDetailsMovie } from 'services/fetchFromApi';
+
+export const Cast = () => {
+  const { id } = useParams();
+  const [cast, setCast] = useState([]);
+
+  useEffect(() => {
+    async function getCast() {
+      const credits = await fetchDetailsMovie(id, '/credits');
+      setCast([...credits.cast]);
+    }
+    getCast();
+  }, [id]);
+
   return (
     <ul>
-      {cast.map((member, index) => (
-        <CastMember key={`member${index}`} cast={member} />
+      {cast.map(actor => (
+        <CastMember key={cast.id} actor={actor} />
       ))}
     </ul>
   );

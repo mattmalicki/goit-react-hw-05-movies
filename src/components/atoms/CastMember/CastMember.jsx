@@ -1,13 +1,17 @@
-export const CastMember = ({ cast }) => {
+export const CastMember = ({ actor }) => {
   return (
     <li>
       <div>
-        <img src={cast.src} width="100%" alt="Cast member of a movie" />
-        <span>{cast.actor}</span>
+        <img
+          src={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
+          width="100%"
+          alt="Cast member of a movie"
+        />
+        <span>{actor.name}</span>
       </div>
       <div>
         <span>Character:</span>
-        <span>{cast.character}</span>
+        <span>{actor.character}</span>
       </div>
     </li>
   );
