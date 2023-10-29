@@ -21,7 +21,6 @@ export const MovieData = ({ movie }) => {
         <div className={styles.Div}>
           <p className={styles.Key}>Genres</p>
           <span className={styles.Value}>
-            {console.log(movie)}
             {movie.genres && movie.genres.map(obj => obj.name).join(', ')}
           </span>
         </div>

@@ -6,9 +6,11 @@ import { NotFoundPage } from 'pages/NotFoundPage/NotFoundPage';
 import { Trending } from 'pages/Trending/Trending';
 import { MovieInfo } from 'components/organisms/MovieInfo/MovieInfo';
 
+import styles from './App.module.css';
+
 export const App = () => {
   return (
-    <>
+    <div className={styles.App}>
       <Header />
 
       <Routes>
@@ -17,6 +19,6 @@ export const App = () => {
         <Route path="/movies/:id/*" element={<MovieInfo />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </>
+    </div>
   );
 };
