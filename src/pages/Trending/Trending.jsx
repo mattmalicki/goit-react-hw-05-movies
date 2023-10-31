@@ -1,28 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { MovieList } from 'components/molecules/MovieList/MovieList';
 
 import { fetchTrendingMovies } from 'services/fetchFromApi';
 
 export const Trending = () => {
-  const [moviesArray, setMoviesArray] = useState([]);
+  const moviesArray = useRef([]);
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
     async function getMovies() {
       try {
         const movies = await fetchTrendingMovies(1);
-        setMoviesArray([...movies.results]);
+        moviesArray.current = [...movies.results];
       } catch (err) {
         console.log('Error: ', err.toString());
+      } finally {
+        setLoad(l => !l);
       }
     }
     getMovies();
   }, []);
-  // useEffect(() => {}, [moviesArray]);
+  useEffect(() => {}, [load]);
   return (
     <>
       <h2>Trending today</h2>
-      <MovieList movies={moviesArray} />
+      {moviesArray.current && <MovieList movies={moviesArray.current} />}
     </>
   );
 };
