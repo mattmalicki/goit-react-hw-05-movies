@@ -4,7 +4,7 @@ import { MovieList } from 'components/molecules/MovieList/MovieList';
 
 import { fetchTrendingMovies } from 'services/fetchFromApi';
 
-export const Trending = () => {
+const Trending = () => {
   const moviesArray = useRef([]);
   const [load, setLoad] = useState(false);
 
@@ -29,3 +29,5 @@ export const Trending = () => {
     </>
   );
 };
+
+export default Trending;

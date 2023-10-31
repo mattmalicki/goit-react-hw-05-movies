@@ -10,7 +10,7 @@ import { MovieMoreInfo } from 'components/atoms/MovieMoreInfo/MovieMoreInfo';
 
 import { fetchDetailsMovie } from 'services/fetchFromApi';
 
-export const MovieInfo = () => {
+const MovieInfo = () => {
   const { id } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
   const location = useLocation();
@@ -36,3 +36,5 @@ export const MovieInfo = () => {
     </>
   );
 };
+
+export default MovieInfo;
