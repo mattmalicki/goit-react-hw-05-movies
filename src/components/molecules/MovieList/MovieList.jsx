@@ -4,9 +4,11 @@ import { MovieCard } from 'components/atoms/MovieCard/MovieCard';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
-  const pathFrom = location.pathname === '/' ? 'movies/' : '';
+  const pathFrom =
+    location.pathname === '/goit-react-hw-05-movies/' ? 'movies/' : '';
   return (
     <ul>
+      {console.log(location.pathname)}
       {movies.map(movie => (
         <Link
           key={movie.id}

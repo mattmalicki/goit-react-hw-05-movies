@@ -20,9 +20,15 @@ export const App = () => {
       <div className={styles.Pages}>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/" element={<Trending />} />
-            <Route path="/movies/*" element={<Movies />} />
-            <Route path="/movies/:id/*" element={<MovieInfo />} />
+            <Route path="goit-react-hw-05-movies/" element={<Trending />} />
+            <Route
+              path="goit-react-hw-05-movies/movies/*"
+              element={<Movies />}
+            />
+            <Route
+              path="goit-react-hw-05-movies/movies/:id/*"
+              element={<MovieInfo />}
+            />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
