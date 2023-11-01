@@ -36,6 +36,6 @@ Run project in your localhost:
 npm start
 ```
 
-[picture1]: ./images/picture1.png;
-[picture2]: ./images/picture2.png;
-[picture3]: ./images/picture3.png;
+[picture1]: ./images/picture1.png
+[picture2]: ./images/picture2.png
+[picture3]: ./images/picture3.png
