@@ -8,7 +8,6 @@ const MovieList = ({ movies }) => {
     location.pathname === '/goit-react-hw-05-movies/' ? 'movies/' : '';
   return (
     <ul>
-      {console.log(location.pathname)}
       {movies.map(movie => (
         <Link
           key={movie.id}
