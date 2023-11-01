@@ -1,7 +1,8 @@
-import { SearchForm } from 'components/atoms/SearchForm/SearchForm';
-import { MovieList } from 'components/molecules/MovieList/MovieList';
 import { useRef, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
+import { SearchForm } from 'components/atoms/SearchForm/SearchForm';
+import MovieList from 'components/molecules/MovieList/MovieList';
 
 import { fetchMoviesWithName } from 'services/fetchFromApi';
 

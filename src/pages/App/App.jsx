@@ -6,8 +6,8 @@ import Header from '../../components/organisms/Header/Header';
 
 import styles from './App.module.css';
 
-const Movies = lazy(() => import('../Movies/Movies'));
-const Trending = lazy(() => import('../Trending/Trending'));
+const Movies = lazy(() => delayForDemo(import('../Movies/Movies')));
+const Trending = lazy(() => delayForDemo(import('../Trending/Trending')));
 const NotFoundPage = lazy(() => import('../NotFoundPage/NotFoundPage'));
 const MovieInfo = lazy(() =>
   import('../../components/organisms/MovieInfo/MovieInfo')
@@ -30,3 +30,9 @@ export const App = () => {
     </div>
   );
 };
+
+async function delayForDemo(promise) {
+  return new Promise(resolve => {
+    setTimeout(resolve, 2000);
+  }).then(() => promise);
+}

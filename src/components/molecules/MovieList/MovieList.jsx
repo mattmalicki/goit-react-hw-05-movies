@@ -1,9 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
 
 import { MovieCard } from 'components/atoms/MovieCard/MovieCard';
 
-export const MovieList = ({ movies }) => {
+const MovieList = ({ movies }) => {
   const location = useLocation();
   const pathFrom = location.pathname === '/' ? 'movies/' : '';
   return (
@@ -20,3 +19,5 @@ export const MovieList = ({ movies }) => {
     </ul>
   );
 };
+
+export default MovieList;

@@ -1,5 +1,5 @@
 import { Routes, Route, useParams } from 'react-router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useLocation } from 'react-router';
 
 import { Cast } from 'components/molecules/Cast/Cast';
@@ -13,8 +13,8 @@ import { fetchDetailsMovie } from 'services/fetchFromApi';
 const MovieInfo = () => {
   const { id } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
-  const location = useLocation();
-  const backTo = location.state?.from;
+  const location = useRef(useLocation());
+  const backTo = useRef(location.current.state.from);
 
   useEffect(() => {
     async function getMovieInfo() {
@@ -26,7 +26,7 @@ const MovieInfo = () => {
 
   return (
     <>
-      <BackButton to={backTo} />
+      <BackButton to={backTo.current} />
       <MovieData movie={movieInfo} />
       <MovieMoreInfo />
       <Routes>
