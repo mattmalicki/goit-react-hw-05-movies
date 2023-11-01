@@ -14,7 +14,9 @@ const MovieInfo = () => {
   const { id } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
   const location = useRef(useLocation());
-  const backTo = useRef(location.current.state.from);
+  const backTo = useRef(
+    location.current.state?.from || location.current.pathname
+  );
 
   useEffect(() => {
     async function getMovieInfo() {

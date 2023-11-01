@@ -14,6 +14,7 @@
 
 .Name {
   font-size: 16px;
+  white-space: nowrap;
 }
 
 .CharacterDiv {
@@ -24,6 +25,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .CharacterTitle {
@@ -32,4 +34,10 @@
 
 .Character {
   font-size: 16px;
+  white-space: nowrap;
+}
+
+.Image {
+  object-fit: cover;
+  height: 246px;
 }
