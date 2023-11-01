@@ -3,3 +3,8 @@
   padding: 0 20px;
   margin: 0 auto;
 }
+
+.Pages {
+  position: relative;
+  width: 100%;
+}

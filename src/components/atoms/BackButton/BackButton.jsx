@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 
+import styles from './BackButton.module.css';
+
 export const BackButton = ({ to }) => {
   return (
     <Link to={to}>
-      <button>Go back</button>
+      <button className={styles.BackButton}>Go back</button>
     </Link>
   );
 };

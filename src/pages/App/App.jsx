@@ -1,13 +1,12 @@
 import { Routes, Route } from 'react-router';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 
+import { Loader } from 'components/atoms/Loader/Loader';
 import Header from '../../components/organisms/Header/Header';
-import { SharedLayout } from 'components/organisms/SharedLayout/SharedLayout';
 
 import styles from './App.module.css';
 
 const Movies = lazy(() => import('../Movies/Movies'));
-// const Header = import('../../components/organisms/Header/Header');
 const Trending = lazy(() => import('../Trending/Trending'));
 const NotFoundPage = lazy(() => import('../NotFoundPage/NotFoundPage'));
 const MovieInfo = lazy(() =>
@@ -18,14 +17,16 @@ export const App = () => {
   return (
     <div className={styles.App}>
       <Header />
-
-      <Routes>
-        <Route path="/" element={<SharedLayout />} />
-        <Route index element={<Trending />} />
-        <Route path="/movies/*" element={<Movies />} />
-        <Route path="/movies/:id/*" element={<MovieInfo />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <div className={styles.Pages}>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Trending />} />
+            <Route path="/movies/*" element={<Movies />} />
+            <Route path="/movies/:id/*" element={<MovieInfo />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+      </div>
     </div>
   );
 };
